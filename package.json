@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/gar0085/chatterbox-backend#readme",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express.js": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.7",
     "morgan": "^1.10.0"
   }
