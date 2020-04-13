@@ -5,14 +5,14 @@ const messageSchema = new Schema(
 	{
 		postedBy: {
 			type: Schema.Types.ObjectId,
-            ref: 'User'
+			ref: 'User',
 		},
-        content: {
-			type: String
-        },
+		content: {
+			type: String,
+		},
 		attachment: {
-			type: Blob
-		}
+			type: String,
+		},
 	},
 	{
 		timestamps: true,
@@ -24,13 +24,13 @@ const channelSchema = new Schema(
 		name: {
 			type: String,
 			required: true,
-			unique: true
+			unique: true,
 		},
-        messages: [messageSchema],
+		messages: [messageSchema],
 		lobby: {
 			type: Schema.Types.ObjectId,
-            ref: 'Lobby'
-		}
+			ref: 'Lobby',
+		},
 	},
 	{
 		timestamps: true,

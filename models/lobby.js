@@ -6,7 +6,7 @@ const lobbySchema = new Schema(
 		name: {
 			type: String,
 			required: true,
-			unique: true
+			unique: true,
 		},
 		password: {
 			type: String,
@@ -14,10 +14,10 @@ const lobbySchema = new Schema(
 		},
 		owner: {
 			type: Schema.Types.ObjectId,
-            ref: 'User'
+			ref: 'User',
 		},
 		users: [],
-		banned: []
+		banned: [],
 	},
 	{
 		timestamps: true,

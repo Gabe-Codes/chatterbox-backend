@@ -9,7 +9,7 @@ const userSchema = new Schema(
 		username: {
 			type: String,
 			required: true,
-			unique: true
+			unique: true,
 		},
 		displayName: {
 			type: String,
@@ -30,8 +30,8 @@ const userSchema = new Schema(
 		},
 		friends: {
 			type: Schema.Types.ObjectId,
-            ref: 'User'
-		}
+			ref: 'User',
+		},
 	},
 	{
 		timestamps: true,
