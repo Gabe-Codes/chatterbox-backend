@@ -15,6 +15,7 @@ app.use(express.json());
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/lobbies', require('./routes/api/lobbies'));
 app.use('/api/channels', require('./routes/api/channels'));
+app.use('/api/messages', require('./routes/api/messages'));
 
 app.listen(port, () => {
 	console.log(`Express is listening on port ${port}`);

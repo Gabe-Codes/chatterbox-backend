@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const lobbiesCtrl = require('../../controllers/channels');
+const channelsCtrl = require('../../controllers/channels');
 
-router.get('/', lobbiesCtrl.index);
-router.get('/:id', lobbiesCtrl.show);
+router.get('/', channelsCtrl.index);
+router.get('/:id', channelsCtrl.show);
 
-router.post('/', lobbiesCtrl.create);
-router.delete('/:id', lobbiesCtrl.delete);
-router.put('/:id', lobbiesCtrl.update);
+router.post('/', channelsCtrl.create);
+router.delete('/:id', channelsCtrl.delete);
+router.put('/:id', channelsCtrl.update);
 
 module.exports = router;
