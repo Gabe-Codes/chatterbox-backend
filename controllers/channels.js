@@ -9,7 +9,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-	const channels = await Channel.find({});
+	const channels = await Channel.find({}).populate('lobby').populate('messages.postedBy');
 	res.status(200).json(channels);
 }
 

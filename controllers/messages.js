@@ -7,10 +7,10 @@ module.exports = {
 };
 
 async function create(req, res) {
-	const message = await Channel.findById(req.params.id, (err, channel) => {
-		channel.messages.push(req.body);
+	const channel = await Channel.findByIdAndUpdate(req.body.id, {
+		$push: { messages: req.body },
 	});
-	res.status(201).json(message);
+	res.status(201).json(channel);
 }
 
 async function update(req, res) {

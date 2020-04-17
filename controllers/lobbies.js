@@ -9,7 +9,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-	const lobbies = await Lobby.find({});
+	const lobbies = await Lobby.find({}).populate('owner');
 	res.status(200).json(lobbies);
 }
 
