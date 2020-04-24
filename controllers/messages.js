@@ -14,23 +14,15 @@ async function create(req, res) {
 }
 
 async function update(req, res) {
-	const updatedMessage = await Channel.findOne(
-		{ 'messages._id': req.params.id },
-		(err, channel) => {
-			const message = channel.messages.id(req.params.id);
-			message.message = req.body.content;
-		}
-	);
-	res.status(200).json(updatedMessage);
+	const channel = await Channel.findOne({ 'messages._id': req.params.id });
+	channel.messages.id(req.params.id).message = req.body.content;
+	await channel.save();
+	res.status(200).json(channel);
 }
 
 async function deleteMessage(req, res) {
-	const deletedMessage = await Channel.findOne(
-		{ 'messages._id': req.params.id },
-		(err, channel) => {
-			const message = channel.messages.id(req.params.id);
-			message.remove();
-		}
-	);
-	res.status(200).json(deletedMessage);
+	const channel = await Channel.findOne({ 'messages._id': req.params.id });
+	channel.messages.id(req.params.id).remove();
+	await channel.save();
+	res.status(200).json(channel);
 }
